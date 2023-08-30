@@ -1,0 +1,2042 @@
+{
+    "LimitX_MUMBAI_ABI": [
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_axelarGatewayAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_axelarGasReceiver",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IUniswapV2Router02",
+                    "name": "_swapRouter",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract LinkTokenInterface",
+                    "name": "_link",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract KeeperRegistrarInterface",
+                    "name": "_registrar",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract AutomationRegistryInterface",
+                    "name": "_registry",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_wethAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_wrappedNativeTokenAddress",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "name": "CONDITION_NOT_MET",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "InvalidAddress",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "NotApprovedByGateway",
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "depositId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "actionType",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isActive",
+                    "type": "bool"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "depositor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Action",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "fallback"
+        },
+        {
+            "inputs": [],
+            "name": "WETH",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "WNATIVE",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "activeDepositCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "axelarGasService",
+            "outputs": [
+                {
+                    "internalType": "contract IAxelarGasService",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "cancelAutoDeposit",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "checkData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "checkUpkeep",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "upkeepNeeded",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "performData",
+                    "type": "bytes"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_executionPrice",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "createAutoDeposit",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "crossAxelarTokenSymbol",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_recipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_slippage",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                }
+            ],
+            "name": "crossChainTransferCall",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "crossTransferSlippage",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "depositor",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "deposits",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "automationId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "price",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isActive",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "commandId",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceAddress",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "payload",
+                    "type": "bytes"
+                }
+            ],
+            "name": "execute",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_price",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeLimitOrder",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address[]",
+                    "name": "_toTokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeMultipleOrderToMany",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address[]",
+                    "name": "_fromTokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeMultipleOrderToOne",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "commandId",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceAddress",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "payload",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "string",
+                    "name": "tokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "executeWithToken",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "gateway",
+            "outputs": [
+                {
+                    "internalType": "contract IAxelarGateway",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                }
+            ],
+            "name": "getCurrentPrice",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getLatestPriceFeed",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_link",
+            "outputs": [
+                {
+                    "internalType": "contract LinkTokenInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_registrar",
+            "outputs": [
+                {
+                    "internalType": "contract KeeperRegistrarInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_registry",
+            "outputs": [
+                {
+                    "internalType": "contract AutomationRegistryInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "inactiveDepositCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "performData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "performUpkeep",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_tokenSymbol",
+                    "type": "string"
+                }
+            ],
+            "name": "setCrossAxelarTokenSymbol",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_connextSlippage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setCrossTransferSlippage",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_activated",
+                    "type": "bool"
+                }
+            ],
+            "name": "setDummyExecutionActivated",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "int256",
+                    "name": "_price",
+                    "type": "int256"
+                }
+            ],
+            "name": "setDummyExecutionPrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_routerAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setRouterAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint96",
+                    "name": "_upkeepFee",
+                    "type": "uint96"
+                }
+            ],
+            "name": "setUpkeepFee",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "wethAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setWethAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "nativeAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setWrappedNativeTokenAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "swapRouter",
+            "outputs": [
+                {
+                    "internalType": "contract IUniswapV2Router02",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "upkeepFee",
+            "outputs": [
+                {
+                    "internalType": "uint96",
+                    "name": "",
+                    "type": "uint96"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "upkeepGasLimit",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "userDeposits",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
+        }
+    ],
+    "LIMITX_MUMBAI_ADDRESS": "0xaa846A3F7aAdCB7BE67aA0Fea79f454Fff883F92",
+    "LimitX_BINANCE_ABI": [
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_axelarGatewayAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_axelarGasReceiver",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract IUniswapV2Router02",
+                    "name": "_swapRouter",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract LinkTokenInterface",
+                    "name": "_link",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract KeeperRegistrarInterface",
+                    "name": "_registrar",
+                    "type": "address"
+                },
+                {
+                    "internalType": "contract AutomationRegistryInterface",
+                    "name": "_registry",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_wethAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_wrappedNativeTokenAddress",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "name": "CONDITION_NOT_MET",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "InvalidAddress",
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "NotApprovedByGateway",
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "depositId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "string",
+                    "name": "actionType",
+                    "type": "string"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isActive",
+                    "type": "bool"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "depositor",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "timestamp",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Action",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "previousOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "fallback"
+        },
+        {
+            "inputs": [],
+            "name": "WETH",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "WNATIVE",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "activeDepositCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "axelarGasService",
+            "outputs": [
+                {
+                    "internalType": "contract IAxelarGasService",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "cancelAutoDeposit",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "checkData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "checkUpkeep",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "upkeepNeeded",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "performData",
+                    "type": "bytes"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_executionPrice",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "createAutoDeposit",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "crossAxelarTokenSymbol",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_recipient",
+                    "type": "address"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_tokenAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_slippage",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                }
+            ],
+            "name": "crossChainTransferCall",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "crossTransferSlippage",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "depositor",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "deposits",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "automationId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "price",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isActive",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "commandId",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceAddress",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "payload",
+                    "type": "bytes"
+                }
+            ],
+            "name": "execute",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_price",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeLimitOrder",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address[]",
+                    "name": "_toTokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeMultipleOrderToMany",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_depositId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_from",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_to",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "_amounts",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "address[]",
+                    "name": "_fromTokens",
+                    "type": "address[]"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_toChain",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "_destinationChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_relayerFee",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_destinationContractAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "executeMultipleOrderToOne",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "commandId",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceChain",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "sourceAddress",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bytes",
+                    "name": "payload",
+                    "type": "bytes"
+                },
+                {
+                    "internalType": "string",
+                    "name": "tokenSymbol",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "executeWithToken",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "gateway",
+            "outputs": [
+                {
+                    "internalType": "contract IAxelarGateway",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_fromToken",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "_toToken",
+                    "type": "address"
+                }
+            ],
+            "name": "getCurrentPrice",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getLatestPriceFeed",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_link",
+            "outputs": [
+                {
+                    "internalType": "contract LinkTokenInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_registrar",
+            "outputs": [
+                {
+                    "internalType": "contract KeeperRegistrarInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "i_registry",
+            "outputs": [
+                {
+                    "internalType": "contract AutomationRegistryInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "inactiveDepositCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bytes",
+                    "name": "performData",
+                    "type": "bytes"
+                }
+            ],
+            "name": "performUpkeep",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "_tokenSymbol",
+                    "type": "string"
+                }
+            ],
+            "name": "setCrossAxelarTokenSymbol",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_connextSlippage",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setCrossTransferSlippage",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_activated",
+                    "type": "bool"
+                }
+            ],
+            "name": "setDummyExecutionActivated",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "int256",
+                    "name": "_price",
+                    "type": "int256"
+                }
+            ],
+            "name": "setDummyExecutionPrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_routerAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setRouterAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint96",
+                    "name": "_upkeepFee",
+                    "type": "uint96"
+                }
+            ],
+            "name": "setUpkeepFee",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "wethAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setWethAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "nativeAddress",
+                    "type": "address"
+                }
+            ],
+            "name": "setWrappedNativeTokenAddress",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "swapRouter",
+            "outputs": [
+                {
+                    "internalType": "contract IUniswapV2Router02",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "upkeepFee",
+            "outputs": [
+                {
+                    "internalType": "uint96",
+                    "name": "",
+                    "type": "uint96"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "upkeepGasLimit",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "userDeposits",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
+        }
+    ],
+    "LIMITX_BINANCE_ADDRESS": "0xBB24DeF7aB385B841e57FDC6F581eEd6D5bCBCb7"
+}

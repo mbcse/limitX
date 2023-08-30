@@ -1,0 +1,2061 @@
+{
+  "version": "3.4",
+  "log": [
+    {
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:AxelarExecutable": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:8",
+        "version": {
+          "withMetadata": "5bb6b3478ea1e06c951218efef815c3e68f819206d485e2320bd1ac5d4c7dd14",
+          "withoutMetadata": "70d2c0c3a41a9bda4caa748315aedb4c874c2cab9fe70e0b9f61febcd2e2f56f",
+          "linkedWithoutMetadata": "70d2c0c3a41a9bda4caa748315aedb4c874c2cab9fe70e0b9f61febcd2e2f56f"
+        },
+        "inherit": [
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "execute(bytes32,string,string,bytes)",
+          "executeWithToken(bytes32,string,string,bytes,string,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "AxelarExecutable",
+            "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:11"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "gateway",
+            "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:7",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "gateway()",
+          "execute(bytes32,string,string,bytes)",
+          "executeWithToken(bytes32,string,string,bytes,string,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol:IAxelarGasService": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "payGasForContractCall(address,string,string,bytes,address,uint256,address)",
+          "payGasForContractCallWithToken(address,string,string,bytes,string,uint256,address,uint256,address)",
+          "payNativeGasForContractCall(address,string,string,bytes,address)",
+          "payNativeGasForContractCallWithToken(address,string,string,bytes,string,uint256,address)",
+          "payGasForExpressCallWithToken(address,string,string,bytes,string,uint256,address,uint256,address)",
+          "payNativeGasForExpressCallWithToken(address,string,string,bytes,string,uint256,address)",
+          "addGas(bytes32,uint256,address,uint256,address)",
+          "addNativeGas(bytes32,uint256,address)",
+          "addExpressGas(bytes32,uint256,address,uint256,address)",
+          "addNativeExpressGas(bytes32,uint256,address)",
+          "collectFees(address payable,address[],uint256[])",
+          "refund(address payable,address,uint256)",
+          "gasCollector()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol:IAxelarGateway": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "sendToken(string,string,string,uint256)",
+          "callContract(string,string,bytes)",
+          "callContractWithToken(string,string,bytes,string,uint256)",
+          "isContractCallApproved(bytes32,string,string,address,bytes32)",
+          "isContractCallAndMintApproved(bytes32,string,string,address,bytes32,string,uint256)",
+          "validateContractCall(bytes32,string,string,bytes32)",
+          "validateContractCallAndMint(bytes32,string,string,bytes32,string,uint256)",
+          "authModule()",
+          "tokenDeployer()",
+          "tokenMintLimit(string)",
+          "tokenMintAmount(string)",
+          "allTokensFrozen()",
+          "implementation()",
+          "tokenAddresses(string)",
+          "tokenFrozen(string)",
+          "isCommandExecuted(bytes32)",
+          "adminEpoch()",
+          "adminThreshold(uint256)",
+          "admins(uint256)",
+          "setTokenMintLimits(string[],uint256[])",
+          "upgrade(address,bytes32,bytes)",
+          "setup(bytes)",
+          "execute(bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/AutomationBase.sol:AutomationBase": {
+        "src": "@chainlink/contracts/src/v0.8/AutomationBase.sol:4",
+        "version": {
+          "withMetadata": "352cfc236a64184c2a37f266fa02a5dc601bb3971ae12fc608c19d5d7c8b84ba",
+          "withoutMetadata": "db12cee82c0b61d41a3f406731f32d59d43e3328864896b25d38f32824fd2bb5",
+          "linkedWithoutMetadata": "db12cee82c0b61d41a3f406731f32d59d43e3328864896b25d38f32824fd2bb5"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/AutomationCompatible.sol:AutomationCompatible": {
+        "src": "@chainlink/contracts/src/v0.8/AutomationCompatible.sol:7",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface",
+          "@chainlink/contracts/src/v0.8/AutomationBase.sol:AutomationBase"
+        ],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol:AggregatorV3Interface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "decimals()",
+          "description()",
+          "version()",
+          "getRoundData(uint80)",
+          "latestRoundData()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:104",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "registerUpkeep(address,uint32,address,bytes,bytes)",
+          "cancelUpkeep(uint256)",
+          "pauseUpkeep(uint256)",
+          "unpauseUpkeep(uint256)",
+          "transferUpkeepAdmin(uint256,address)",
+          "acceptUpkeepAdmin(uint256)",
+          "updateCheckData(uint256,bytes)",
+          "addFunds(uint256,uint96)",
+          "setUpkeepGasLimit(uint256,uint32)",
+          "setUpkeepOffchainConfig(uint256,bytes)",
+          "getUpkeep(uint256)",
+          "getActiveUpkeepIDs(uint256,uint256)",
+          "getTransmitterInfo(address)",
+          "getState()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryExecutableInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:177",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface"
+        ],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:163",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface"
+        ],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol:LinkTokenInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "balanceOf(address)",
+          "decimals()",
+          "decreaseApproval(address,uint256)",
+          "increaseApproval(address,uint256)",
+          "name()",
+          "symbol()",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "11cb756ab1bd213622e8304237bc9a9194c19aa3542e4a747973ad97429d152c",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "d7bde28eb910af6d6608c0ae1937ce485402d7e90d00b8e59bc9810fa3edbff0",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Strings.sol:Strings": {
+        "src": "@openzeppelin/contracts/utils/Strings.sol:12",
+        "version": {
+          "withMetadata": "00508d6941f47c04ef6cf9bc1cffdc9ee96ceaa7647a8c6fcc8158a1558ab0d1",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/math/Math.sol:Math",
+          "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/math/Math.sol:Math": {
+        "src": "@openzeppelin/contracts/utils/math/Math.sol:9",
+        "version": {
+          "withMetadata": "4559cb074234d358b3a89f44c01088d5cf7eea05808cac49b5a042d04ad30f8a",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath": {
+        "src": "@openzeppelin/contracts/utils/math/SignedMath.sol:9",
+        "version": {
+          "withMetadata": "df4331cd474a6f5b13e69a895335bafc37352359ce89403f468593c935b2d1ab",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:IUniswapV2Router01": {
+        "src": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:3",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "factory()",
+          "WETH()",
+          "addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)",
+          "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokens(uint256,address[],address,uint256)",
+          "swapTokensForExactETH(uint256,uint256,address[],address,uint256)",
+          "swapExactTokensForETH(uint256,uint256,address[],address,uint256)",
+          "swapETHForExactTokens(uint256,address[],address,uint256)",
+          "quote(uint256,uint256,uint256)",
+          "getAmountOut(uint256,uint256,uint256)",
+          "getAmountIn(uint256,uint256,uint256)",
+          "getAmountsOut(uint256,address[])",
+          "getAmountsIn(uint256,address[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol:IUniswapV2Router02": {
+        "src": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol:5",
+        "inherit": [
+          "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:IUniswapV2Router01"
+        ],
+        "libraries": [],
+        "methods": [
+          "removeLiquidityETHSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokensSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],address,uint256)",
+          "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:IUniswapV3SwapCallback": {
+        "src": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "uniswapV3SwapCallback(int256,int256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol:ISwapRouter": {
+        "src": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol:9",
+        "inherit": [
+          "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:IUniswapV3SwapCallback"
+        ],
+        "libraries": [],
+        "methods": [
+          "exactInputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))",
+          "exactInput((bytes,address,uint256,uint256,uint256))",
+          "exactOutputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))",
+          "exactOutput((bytes,address,uint256,uint256,uint256))"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol:TransferHelper": {
+        "src": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol:6",
+        "version": {
+          "withMetadata": "283e1e0e9e28a8a8c3011b6ecceac6c42f396bc08caa54c9b8b2a7a2de93059d",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "contracts/LimitX.sol:KeeperRegistrarInterface": {
+        "src": "contracts/LimitX.sol:43",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "registerUpkeep((string,bytes,address,uint32,address,bytes,bytes,uint96))"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "contracts/LimitX.sol:LimitX": {
+        "src": "contracts/LimitX.sol:50",
+        "version": {
+          "withMetadata": "d18512b1b616b4146571d296a37469b90f99a5035a801cecc98c6c81dc58cb79",
+          "withoutMetadata": "915f3bf87bcbc53a1f0d62ae1b47932e3fef342caf5daa4b5a534b01a1aa4cd3",
+          "linkedWithoutMetadata": "915f3bf87bcbc53a1f0d62ae1b47932e3fef342caf5daa4b5a534b01a1aa4cd3"
+        },
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface",
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:AxelarExecutable",
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable",
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "@openzeppelin/contracts/utils/Strings.sol:Strings"
+        ],
+        "methods": [
+          "(address,address,address,address,address,address,address,address)",
+          "setDummyExecutionPrice(int256)",
+          "getLatestPriceFeed()",
+          "setDummyExecutionActivated(bool)",
+          "getCurrentPrice(address,address)",
+          "createAutoDeposit(address,address,uint256,int256,address,address,uint256,string,uint256,address)",
+          "cancelAutoDeposit(uint256)",
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)",
+          "crossChainTransferCall(uint256,address,string,address,uint256,uint256,uint256,address,address)",
+          "executeLimitOrder(uint256,address,address,uint256,int256,address,address,uint256,string,uint256,address)",
+          "executeMultipleOrderToMany(uint256,address,address,uint256[],address,address[],uint256,string,uint256,address)",
+          "executeMultipleOrderToOne(uint256,address,address,uint256[],address[],address,uint256,string,uint256,address)",
+          "setWethAddress(address)",
+          "setWrappedNativeTokenAddress(address)",
+          "setUpkeepFee(uint96)",
+          "setCrossTransferSlippage(uint256)",
+          "setCrossAxelarTokenSymbol(string)",
+          "setRouterAddress(address)",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "LimitX",
+            "src": "contracts/LimitX.sol:123"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "axelarGasService",
+            "src": "contracts/LimitX.sol:53"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "crossAxelarTokenSymbol",
+            "src": "contracts/LimitX.sol:59"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "crossTransferSlippage",
+            "src": "contracts/LimitX.sol:61"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "upkeepFee",
+            "src": "contracts/LimitX.sol:65"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "upkeepGasLimit",
+            "src": "contracts/LimitX.sol:66"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_link",
+            "src": "contracts/LimitX.sol:68"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_registrar",
+            "src": "contracts/LimitX.sol:69"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_registry",
+            "src": "contracts/LimitX.sol:70"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "registerSig",
+            "src": "contracts/LimitX.sol:71"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "dummyExecutionPrice",
+            "src": "contracts/LimitX.sol:74"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "dummyExecutionActivated",
+            "src": "contracts/LimitX.sol:75"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "activeDepositCounter",
+            "src": "contracts/LimitX.sol:77"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "inactiveDepositCounter",
+            "src": "contracts/LimitX.sol:78"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "depositCounter",
+            "src": "contracts/LimitX.sol:79"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "swapRouter",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(IUniswapV2Router02)3858",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:55"
+            },
+            {
+              "label": "WETH",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:57"
+            },
+            {
+              "label": "WNATIVE",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_address",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:58"
+            },
+            {
+              "label": "crossAxelarTokenSymbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:59"
+            },
+            {
+              "label": "crossTransferSlippage",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:61"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(AggregatorV3Interface)950",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:63"
+            },
+            {
+              "label": "upkeepFee",
+              "offset": 20,
+              "slot": "6",
+              "type": "t_uint96",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:65"
+            },
+            {
+              "label": "upkeepGasLimit",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_uint32",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:66"
+            },
+            {
+              "label": "registerSig",
+              "offset": 4,
+              "slot": "7",
+              "type": "t_bytes4",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:71"
+            },
+            {
+              "label": "dummyExecutionPrice",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_int256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:74"
+            },
+            {
+              "label": "dummyExecutionActivated",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_bool",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:75"
+            },
+            {
+              "label": "activeDepositCounter",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:77"
+            },
+            {
+              "label": "inactiveDepositCounter",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:78"
+            },
+            {
+              "label": "depositCounter",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:79"
+            },
+            {
+              "label": "deposits",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_mapping(t_uint256,t_struct(Deposit)4286_storage)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:108"
+            },
+            {
+              "label": "depositor",
+              "offset": 0,
+              "slot": "14",
+              "type": "t_mapping(t_uint256,t_address)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:109"
+            },
+            {
+              "label": "userDeposits",
+              "offset": 0,
+              "slot": "15",
+              "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:110"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes4": {
+              "label": "bytes4",
+              "numberOfBytes": "4"
+            },
+            "t_contract(AggregatorV3Interface)950": {
+              "label": "contract AggregatorV3Interface",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IUniswapV2Router02)3858": {
+              "label": "contract IUniswapV2Router02",
+              "numberOfBytes": "20"
+            },
+            "t_int256": {
+              "label": "int256",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+              "label": "mapping(address => uint256[])",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_address)": {
+              "label": "mapping(uint256 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Deposit)4286_storage)": {
+              "label": "mapping(uint256 => struct LimitX.Deposit)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Deposit)4286_storage": {
+              "label": "struct LimitX.Deposit",
+              "members": [
+                {
+                  "label": "depositId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "automationId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "from",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "to",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "price",
+                  "type": "t_int256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "fromToken",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "toToken",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "toChain",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "8"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "9"
+                }
+              ],
+              "numberOfBytes": "320"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint32": {
+              "label": "uint32",
+              "numberOfBytes": "4"
+            },
+            "t_uint96": {
+              "label": "uint96",
+              "numberOfBytes": "12"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        }
+      },
+      "contracts/LimitX.sol:WRAPPED": {
+        "src": "contracts/LimitX.sol:26",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "deposit()",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      }
+    },
+    {
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:AxelarExecutable": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:8",
+        "version": {
+          "withMetadata": "5bb6b3478ea1e06c951218efef815c3e68f819206d485e2320bd1ac5d4c7dd14",
+          "withoutMetadata": "70d2c0c3a41a9bda4caa748315aedb4c874c2cab9fe70e0b9f61febcd2e2f56f",
+          "linkedWithoutMetadata": "70d2c0c3a41a9bda4caa748315aedb4c874c2cab9fe70e0b9f61febcd2e2f56f"
+        },
+        "inherit": [
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable"
+        ],
+        "libraries": [],
+        "methods": [
+          "(address)",
+          "execute(bytes32,string,string,bytes)",
+          "executeWithToken(bytes32,string,string,bytes,string,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "AxelarExecutable",
+            "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:11"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "gateway",
+            "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:9"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:7",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "gateway()",
+          "execute(bytes32,string,string,bytes)",
+          "executeWithToken(bytes32,string,string,bytes,string,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol:IAxelarGasService": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGasService.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "payGasForContractCall(address,string,string,bytes,address,uint256,address)",
+          "payGasForContractCallWithToken(address,string,string,bytes,string,uint256,address,uint256,address)",
+          "payNativeGasForContractCall(address,string,string,bytes,address)",
+          "payNativeGasForContractCallWithToken(address,string,string,bytes,string,uint256,address)",
+          "payGasForExpressCallWithToken(address,string,string,bytes,string,uint256,address,uint256,address)",
+          "payNativeGasForExpressCallWithToken(address,string,string,bytes,string,uint256,address)",
+          "addGas(bytes32,uint256,address,uint256,address)",
+          "addNativeGas(bytes32,uint256,address)",
+          "addExpressGas(bytes32,uint256,address,uint256,address)",
+          "addNativeExpressGas(bytes32,uint256,address)",
+          "collectFees(address payable,address[],uint256[])",
+          "refund(address payable,address,uint256)",
+          "gasCollector()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol:IAxelarGateway": {
+        "src": "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarGateway.sol:5",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "sendToken(string,string,string,uint256)",
+          "callContract(string,string,bytes)",
+          "callContractWithToken(string,string,bytes,string,uint256)",
+          "isContractCallApproved(bytes32,string,string,address,bytes32)",
+          "isContractCallAndMintApproved(bytes32,string,string,address,bytes32,string,uint256)",
+          "validateContractCall(bytes32,string,string,bytes32)",
+          "validateContractCallAndMint(bytes32,string,string,bytes32,string,uint256)",
+          "authModule()",
+          "tokenDeployer()",
+          "tokenMintLimit(string)",
+          "tokenMintAmount(string)",
+          "allTokensFrozen()",
+          "implementation()",
+          "tokenAddresses(string)",
+          "tokenFrozen(string)",
+          "isCommandExecuted(bytes32)",
+          "adminEpoch()",
+          "adminThreshold(uint256)",
+          "admins(uint256)",
+          "setTokenMintLimits(string[],uint256[])",
+          "upgrade(address,bytes32,bytes)",
+          "setup(bytes)",
+          "execute(bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/AutomationBase.sol:AutomationBase": {
+        "src": "@chainlink/contracts/src/v0.8/AutomationBase.sol:4",
+        "version": {
+          "withMetadata": "352cfc236a64184c2a37f266fa02a5dc601bb3971ae12fc608c19d5d7c8b84ba",
+          "withoutMetadata": "db12cee82c0b61d41a3f406731f32d59d43e3328864896b25d38f32824fd2bb5",
+          "linkedWithoutMetadata": "db12cee82c0b61d41a3f406731f32d59d43e3328864896b25d38f32824fd2bb5"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/AutomationCompatible.sol:AutomationCompatible": {
+        "src": "@chainlink/contracts/src/v0.8/AutomationCompatible.sol:7",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface",
+          "@chainlink/contracts/src/v0.8/AutomationBase.sol:AutomationBase"
+        ],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol:AggregatorV3Interface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "decimals()",
+          "description()",
+          "version()",
+          "getRoundData(uint80)",
+          "latestRoundData()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:104",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "registerUpkeep(address,uint32,address,bytes,bytes)",
+          "cancelUpkeep(uint256)",
+          "pauseUpkeep(uint256)",
+          "unpauseUpkeep(uint256)",
+          "transferUpkeepAdmin(uint256,address)",
+          "acceptUpkeepAdmin(uint256)",
+          "updateCheckData(uint256,bytes)",
+          "addFunds(uint256,uint96)",
+          "setUpkeepGasLimit(uint256,uint32)",
+          "setUpkeepOffchainConfig(uint256,bytes)",
+          "getUpkeep(uint256)",
+          "getActiveUpkeepIDs(uint256,uint256)",
+          "getTransmitterInfo(address)",
+          "getState()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryExecutableInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:177",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface"
+        ],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:163",
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationRegistryInterface2_0.sol:AutomationRegistryBaseInterface"
+        ],
+        "libraries": [],
+        "methods": [
+          "checkUpkeep(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol:LinkTokenInterface": {
+        "src": "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol:4",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "balanceOf(address)",
+          "decimals()",
+          "decreaseApproval(address,uint256)",
+          "increaseApproval(address,uint256)",
+          "name()",
+          "symbol()",
+          "totalSupply()",
+          "transfer(address,uint256)",
+          "transferAndCall(address,uint256,bytes)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/access/Ownable.sol:Ownable": {
+        "src": "@openzeppelin/contracts/access/Ownable.sol:20",
+        "inherit": [
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [],
+        "methods": [
+          "owner()",
+          "renounceOwnership()",
+          "transferOwnership(address)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Ownable",
+            "src": "@openzeppelin/contracts/access/Ownable.sol:28"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/IERC20.sol:IERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/IERC20.sol:9",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "totalSupply()",
+          "balanceOf(address)",
+          "transfer(address,uint256)",
+          "allowance(address,address)",
+          "approve(address,uint256)",
+          "transferFrom(address,address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:IERC20Permit": {
+        "src": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Permit.sol:14",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)",
+          "nonces(address)",
+          "DOMAIN_SEPARATOR()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20": {
+        "src": "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:19",
+        "version": {
+          "withMetadata": "11cb756ab1bd213622e8304237bc9a9194c19aa3542e4a747973ad97429d152c",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/Address.sol:Address"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Address.sol:Address": {
+        "src": "@openzeppelin/contracts/utils/Address.sol:9",
+        "version": {
+          "withMetadata": "d7bde28eb910af6d6608c0ae1937ce485402d7e90d00b8e59bc9810fa3edbff0",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          },
+          {
+            "kind": "delegatecall",
+            "src": "@openzeppelin/contracts/utils/Address.sol:185"
+          }
+        ],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Context.sol:Context": {
+        "src": "@openzeppelin/contracts/utils/Context.sol:16",
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/Strings.sol:Strings": {
+        "src": "@openzeppelin/contracts/utils/Strings.sol:12",
+        "version": {
+          "withMetadata": "00508d6941f47c04ef6cf9bc1cffdc9ee96ceaa7647a8c6fcc8158a1558ab0d1",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [
+          "@openzeppelin/contracts/utils/math/Math.sol:Math",
+          "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath"
+        ],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/math/Math.sol:Math": {
+        "src": "@openzeppelin/contracts/utils/math/Math.sol:9",
+        "version": {
+          "withMetadata": "4559cb074234d358b3a89f44c01088d5cf7eea05808cac49b5a042d04ad30f8a",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@openzeppelin/contracts/utils/math/SignedMath.sol:SignedMath": {
+        "src": "@openzeppelin/contracts/utils/math/SignedMath.sol:9",
+        "version": {
+          "withMetadata": "df4331cd474a6f5b13e69a895335bafc37352359ce89403f468593c935b2d1ab",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:IUniswapV2Router01": {
+        "src": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:3",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "factory()",
+          "WETH()",
+          "addLiquidity(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+          "addLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidity(address,address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETH(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityWithPermit(address,address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "removeLiquidityETHWithPermit(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokens(uint256,uint256,address[],address,uint256)",
+          "swapTokensForExactTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokens(uint256,address[],address,uint256)",
+          "swapTokensForExactETH(uint256,uint256,address[],address,uint256)",
+          "swapExactTokensForETH(uint256,uint256,address[],address,uint256)",
+          "swapETHForExactTokens(uint256,address[],address,uint256)",
+          "quote(uint256,uint256,uint256)",
+          "getAmountOut(uint256,uint256,uint256)",
+          "getAmountIn(uint256,uint256,uint256)",
+          "getAmountsOut(uint256,address[])",
+          "getAmountsIn(uint256,address[])"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol:IUniswapV2Router02": {
+        "src": "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol:5",
+        "inherit": [
+          "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router01.sol:IUniswapV2Router01"
+        ],
+        "libraries": [],
+        "methods": [
+          "removeLiquidityETHSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256)",
+          "removeLiquidityETHWithPermitSupportingFeeOnTransferTokens(address,uint256,uint256,uint256,address,uint256,bool,uint8,bytes32,bytes32)",
+          "swapExactTokensForTokensSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)",
+          "swapExactETHForTokensSupportingFeeOnTransferTokens(uint256,address[],address,uint256)",
+          "swapExactTokensForETHSupportingFeeOnTransferTokens(uint256,uint256,address[],address,uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:IUniswapV3SwapCallback": {
+        "src": "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:6",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "uniswapV3SwapCallback(int256,int256,bytes)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol:ISwapRouter": {
+        "src": "@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol:9",
+        "inherit": [
+          "@uniswap/v3-core/contracts/interfaces/callback/IUniswapV3SwapCallback.sol:IUniswapV3SwapCallback"
+        ],
+        "libraries": [],
+        "methods": [
+          "exactInputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))",
+          "exactInput((bytes,address,uint256,uint256,uint256))",
+          "exactOutputSingle((address,address,uint24,address,uint256,uint256,uint256,uint160))",
+          "exactOutput((bytes,address,uint256,uint256,uint256))"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol:TransferHelper": {
+        "src": "@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol:6",
+        "version": {
+          "withMetadata": "283e1e0e9e28a8a8c3011b6ecceac6c42f396bc08caa54c9b8b2a7a2de93059d",
+          "withoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a",
+          "linkedWithoutMetadata": "e2a89a66865458f0d9fedd4bc7faf0ee62e4c341d176ab79d29bd77a1bdfc32a"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "contracts/LimitX.sol:KeeperRegistrarInterface": {
+        "src": "contracts/LimitX.sol:43",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "registerUpkeep((string,bytes,address,uint32,address,bytes,bytes,uint96))"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      },
+      "contracts/LimitX.sol:LimitX": {
+        "src": "contracts/LimitX.sol:50",
+        "version": {
+          "withMetadata": "d18512b1b616b4146571d296a37469b90f99a5035a801cecc98c6c81dc58cb79",
+          "withoutMetadata": "915f3bf87bcbc53a1f0d62ae1b47932e3fef342caf5daa4b5a534b01a1aa4cd3",
+          "linkedWithoutMetadata": "915f3bf87bcbc53a1f0d62ae1b47932e3fef342caf5daa4b5a534b01a1aa4cd3"
+        },
+        "inherit": [
+          "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol:AutomationCompatibleInterface",
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/executable/AxelarExecutable.sol:AxelarExecutable",
+          "@axelar-network/axelar-gmp-sdk-solidity/contracts/interfaces/IAxelarExecutable.sol:IAxelarExecutable",
+          "@openzeppelin/contracts/access/Ownable.sol:Ownable",
+          "@openzeppelin/contracts/utils/Context.sol:Context"
+        ],
+        "libraries": [
+          "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol:SafeERC20",
+          "@openzeppelin/contracts/utils/Strings.sol:Strings"
+        ],
+        "methods": [
+          "(address,address,address,address,address,address,address,address)",
+          "setDummyExecutionPrice(int256)",
+          "getLatestPriceFeed()",
+          "setDummyExecutionActivated(bool)",
+          "getCurrentPrice(address,address)",
+          "createAutoDeposit(address,address,uint256,int256,address,address,uint256,string,uint256,address)",
+          "cancelAutoDeposit(uint256)",
+          "checkUpkeep(bytes)",
+          "performUpkeep(bytes)",
+          "crossChainTransferCall(uint256,address,string,address,uint256,uint256,uint256,address,address)",
+          "executeLimitOrder(uint256,address,address,uint256,int256,address,address,uint256,string,uint256,address)",
+          "executeMultipleOrderToMany(uint256,address,address,uint256[],address,address[],uint256,string,uint256,address)",
+          "executeMultipleOrderToOne(uint256,address,address,uint256[],address[],address,uint256,string,uint256,address)",
+          "setWethAddress(address)",
+          "setWrappedNativeTokenAddress(address)",
+          "setUpkeepFee(uint96)",
+          "setCrossTransferSlippage(uint256)",
+          "setCrossAxelarTokenSymbol(string)",
+          "setRouterAddress(address)",
+          "()",
+          "()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "LimitX",
+            "src": "contracts/LimitX.sol:123"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "axelarGasService",
+            "src": "contracts/LimitX.sol:53"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "crossAxelarTokenSymbol",
+            "src": "contracts/LimitX.sol:59"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "crossTransferSlippage",
+            "src": "contracts/LimitX.sol:61"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "upkeepFee",
+            "src": "contracts/LimitX.sol:65"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "upkeepGasLimit",
+            "src": "contracts/LimitX.sol:66"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_link",
+            "src": "contracts/LimitX.sol:68"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_registrar",
+            "src": "contracts/LimitX.sol:69"
+          },
+          {
+            "kind": "state-variable-immutable",
+            "name": "i_registry",
+            "src": "contracts/LimitX.sol:70"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "registerSig",
+            "src": "contracts/LimitX.sol:71"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "dummyExecutionPrice",
+            "src": "contracts/LimitX.sol:74"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "dummyExecutionActivated",
+            "src": "contracts/LimitX.sol:75"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "activeDepositCounter",
+            "src": "contracts/LimitX.sol:77"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "inactiveDepositCounter",
+            "src": "contracts/LimitX.sol:78"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "depositCounter",
+            "src": "contracts/LimitX.sol:79"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "label": "_owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "Ownable",
+              "src": "@openzeppelin/contracts/access/Ownable.sol:21"
+            },
+            {
+              "label": "swapRouter",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_contract(IUniswapV2Router02)3858",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:55"
+            },
+            {
+              "label": "WETH",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_address",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:57"
+            },
+            {
+              "label": "WNATIVE",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_address",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:58"
+            },
+            {
+              "label": "crossAxelarTokenSymbol",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_string_storage",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:59"
+            },
+            {
+              "label": "crossTransferSlippage",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:61"
+            },
+            {
+              "label": "priceFeed",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_contract(AggregatorV3Interface)950",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:63"
+            },
+            {
+              "label": "upkeepFee",
+              "offset": 20,
+              "slot": "6",
+              "type": "t_uint96",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:65"
+            },
+            {
+              "label": "upkeepGasLimit",
+              "offset": 0,
+              "slot": "7",
+              "type": "t_uint32",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:66"
+            },
+            {
+              "label": "registerSig",
+              "offset": 4,
+              "slot": "7",
+              "type": "t_bytes4",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:71"
+            },
+            {
+              "label": "dummyExecutionPrice",
+              "offset": 0,
+              "slot": "8",
+              "type": "t_int256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:74"
+            },
+            {
+              "label": "dummyExecutionActivated",
+              "offset": 0,
+              "slot": "9",
+              "type": "t_bool",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:75"
+            },
+            {
+              "label": "activeDepositCounter",
+              "offset": 0,
+              "slot": "10",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:77"
+            },
+            {
+              "label": "inactiveDepositCounter",
+              "offset": 0,
+              "slot": "11",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:78"
+            },
+            {
+              "label": "depositCounter",
+              "offset": 0,
+              "slot": "12",
+              "type": "t_uint256",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:79"
+            },
+            {
+              "label": "deposits",
+              "offset": 0,
+              "slot": "13",
+              "type": "t_mapping(t_uint256,t_struct(Deposit)4286_storage)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:108"
+            },
+            {
+              "label": "depositor",
+              "offset": 0,
+              "slot": "14",
+              "type": "t_mapping(t_uint256,t_address)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:109"
+            },
+            {
+              "label": "userDeposits",
+              "offset": 0,
+              "slot": "15",
+              "type": "t_mapping(t_address,t_array(t_uint256)dyn_storage)",
+              "contract": "LimitX",
+              "src": "contracts/LimitX.sol:110"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_uint256)dyn_storage": {
+              "label": "uint256[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_bytes4": {
+              "label": "bytes4",
+              "numberOfBytes": "4"
+            },
+            "t_contract(AggregatorV3Interface)950": {
+              "label": "contract AggregatorV3Interface",
+              "numberOfBytes": "20"
+            },
+            "t_contract(IUniswapV2Router02)3858": {
+              "label": "contract IUniswapV2Router02",
+              "numberOfBytes": "20"
+            },
+            "t_int256": {
+              "label": "int256",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_address,t_array(t_uint256)dyn_storage)": {
+              "label": "mapping(address => uint256[])",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_address)": {
+              "label": "mapping(uint256 => address)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Deposit)4286_storage)": {
+              "label": "mapping(uint256 => struct LimitX.Deposit)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Deposit)4286_storage": {
+              "label": "struct LimitX.Deposit",
+              "members": [
+                {
+                  "label": "depositId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "automationId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "from",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "to",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "amount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                },
+                {
+                  "label": "price",
+                  "type": "t_int256",
+                  "offset": 0,
+                  "slot": "5"
+                },
+                {
+                  "label": "fromToken",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "6"
+                },
+                {
+                  "label": "toToken",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "7"
+                },
+                {
+                  "label": "toChain",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "8"
+                },
+                {
+                  "label": "isActive",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "9"
+                }
+              ],
+              "numberOfBytes": "320"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            },
+            "t_uint32": {
+              "label": "uint32",
+              "numberOfBytes": "4"
+            },
+            "t_uint96": {
+              "label": "uint96",
+              "numberOfBytes": "12"
+            }
+          },
+          "layoutVersion": "1.2",
+          "flat": true
+        }
+      },
+      "contracts/LimitX.sol:WRAPPED": {
+        "src": "contracts/LimitX.sol:26",
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "deposit()",
+          "withdraw(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.2",
+          "flat": false
+        }
+      }
+    }
+  ]
+}
