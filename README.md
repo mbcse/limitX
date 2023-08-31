@@ -1,7 +1,7 @@
 # LimitX
 Automatic Cross Chain Limit Order and Swap Protocol
 
-###Introducing LimitX Powered by Axelar and Chainlink
+### Introducing LimitX Powered by Axelar and Chainlink
 
 ## Inspiration
 We have developed LimitX, an automation module that empowers account abstraction or EOA wallets to create limit orders from any token on any source chain to another token on any destination chain within the EVM ecosystem.
